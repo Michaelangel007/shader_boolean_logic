@@ -32,24 +32,24 @@ In Mathematics and Computer Science we count, in Binary, up from 00, 01, 10, 11.
 
 However, we _can_ extend this to floating-poing math! Here are the formulas:
 
-| # |Name | Float              |
-|:-:|:---:|:------------------:|
-| 0 |False| 0                  |
-| 1 | AND | p*q                |
-| 2 |!then| p*(1-q)            |
-| 3 |  p  | p                  |
-| 4 |!if  | (1-p)*q            |
-| 5 |  q  | q                  |
-| 6 | XOR | p*(1-q)+(1-p)*q    |
-| 7 | OR  | 1-(1-q)*(1-p)      |
-| 8 | NOR |   (1-q)*(1-p)      |
-| 9 |XNOR | 1-(p*(1-q)+(1-p)*q)|
-|10 | !q  | 1-q                |
-|11 |then | 1-(1-p)*q          |
-|12 | !p  | 1-p                |
-|13 | if  | 1-p*(1-q)          |
-|14 |NAND | 1-p*q              |
-|15 |True | 1-0                |
+| # |Name | Float                 |
+|:-:|:---:|:---------------------:|
+| 0 |False| 0                     |
+| 1 | AND | p*q                   |
+| 2 |!then| p*(1-q)               |
+| 3 |  p  | p                     |
+| 4 |!if  | (1-p)*q               |
+| 5 |  q  | q                     |
+| 6 | XOR | p\*(1-q)+(1-p)\*q     |
+| 7 | OR  | 1-(1-q)*(1-p)         |
+| 8 | NOR |   (1-q)*(1-p)         |
+| 9 |XNOR | 1-(p\*(1-q)+(1-p)\*q) |
+|10 | !q  | 1-q                   |
+|11 |then | 1-(1-p)*q             |
+|12 | !p  | 1-p                   |
+|13 | if  | 1-p*(1-q)             |
+|14 |NAND | 1-p*q                 |
+|15 |True | 1-0                   |
 
 
 Note(s):
