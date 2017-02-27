@@ -33,7 +33,7 @@ In Mathematics and Computer Science we count, in Binary, up from 00, 01, 10, 11.
 However, we _can_ extend this to floating-poing math! Here are the formulas:
 
 | # |Name | Float              |
-| -:|:---:|:------------------:|
+|:-:|:---:|:------------------:|
 | 0 |False| 0                  |
 | 1 | AND | p*q                |
 | 2 |!then| p*(1-q)            |
