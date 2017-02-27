@@ -32,7 +32,7 @@ In Mathematics and Computer Science we count, in Binary, up from 00, 01, 10, 11.
 
 However, we _can_ extend this to floating-poing math! Here are the formulas:
 
-| # |Name | Float                 |
+| # |Name | Operation             |
 |:-:|:---:|:---------------------:|
 | 0 |False| 0                     |
 | 1 | AND | p*q                   |
@@ -49,12 +49,14 @@ However, we _can_ extend this to floating-poing math! Here are the formulas:
 |12 | !p  | 1-p                   |
 |13 | if  | 1-p*(1-q)             |
 |14 |NAND | 1-p*q                 |
-|15 |True | 1-0                   |
+|15 |True | 1                     |
 
 
 Note(s):
 
 ```
+    Entries 8 .. 15 are `1 - x` of #0..#7, except for `if`, `then`, `!if`, and `then`
+
     XOR can be thought as:
 
         !then + !if
