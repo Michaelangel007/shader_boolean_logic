@@ -1,34 +1,35 @@
 /*
 
- Boolean Logic Demo
- Michael Pohoreski aka mysticreddit
- Copyleft {C} 2017
- https://github.com/Michaelangel007/shader_boolean_logic
-
-Version 5
+Boolean Logic Demo
+Michael Pohoreski aka Michaelangel007 aka mysticreddit
+Copyleft {C} 2017
+https://github.com/Michaelangel007/shader_boolean_logic
+Version 6
 
 DISCLAIMER:
 
-      You are free to use this code as you wish.
+    You are free to use this code as you wish.
 
-      However, if you are going to copy/paste this code
-      and paste snippets on StackOverflow, StackExchange, Reddit, etc.
-      Please provide a link back to the original source
-      so that people can find updates and bugfixes.
-      Thanks!
+    However, if you are going to copy/paste this code
+    and paste snippets on StackOverflow, StackExchange, Reddit, etc.
+    Please provide a link back to the original source
+    so that people can find updates and bugfixes.
+    Thanks!
 
-Boolean Logic or Truth Tables are tradionally defined as integer only.
-https://en.wikipedia.org/wiki/Truth_table#Binary_operations
+Introduction:
 
-We _can_ extend this to floating-poing math.
+    Boolean Logic or Truth Tables are tradionally defined as integer only.
+    https://en.wikipedia.org/wiki/Truth_table#Binary_operations
 
-This demo shows how to define the boolean operators such as AND, OR, NOT, etc.
-using floating-poing math when you don't have boolean operators.
+    We _can_ extend this to floating-poing math.
 
-This lets you create all sorts of interesting patterns.
+    This demo shows how to define the boolean operators such as AND, OR, NOT, etc.
+    using floating-poing math when you don't have boolean operators.
 
-i.e.
-    Checkerboard = (x XOR y);
+    This lets you create all sorts of interesting patterns.
+
+    i.e.
+        Checkerboard = (x XOR y);
 
 Also see:
 
@@ -36,6 +37,7 @@ Also see:
  https://www.shadertoy.com/view/MdfyDH
 
 */
+#define MOUSE_DRAG_COMPARE 0 // Change to 1 for split screen compare
 
     float   bNOT  ( float a )          { return 1.-a; }
 
@@ -384,7 +386,12 @@ float center( float glyphWidth, float numChars )
 void mainImage( out vec4 f, in vec2 p )
 {
     vec2 q = p / iResolution.xy;
+
+#if MOUSE_DRAG_COMPARE
+    bool m = (iMouse.x >= p.x); // left mouse button down
+#else
     bool m = (iMouse.z > 0.5); // left mouse button down
+#endif
 
     float g;
 
@@ -419,7 +426,7 @@ void mainImage( out vec4 f, in vec2 p )
 
     if( iResolution.x > 512. )
         gvFontSize.x *= 2.0;
-        
+
     float x0 = fract( q.x * COL );
     float edgeW = COL / iResolution.x;
     float edgeH = 12.0; // Magic Number: 1 scanline of h
@@ -518,7 +525,7 @@ else            if( col== 9.0 ) len = 4.0; // XNOR
 else            if( col==11.0 ) len = 4.0; // THEN
 else            if( col==14.0 ) len = 4.0; // NAND
 
-                prefixGap = center( w, len ); 
+                prefixGap = center( w, len );
 
                 gvPrintCharXY.x = x*w + prefixGap; // x/2 = center on x chars
 
@@ -635,4 +642,3 @@ else        if( q.y < (y + h*4./4.) ) { a = z; b = z; }
 
     f.rgb = color;
 }
-
