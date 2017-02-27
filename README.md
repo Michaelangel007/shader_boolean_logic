@@ -11,7 +11,7 @@ Boolean Floating-Point Truth Table
 
 ![False Color](pics/boolean_false_color.png)
 
-# Explaination
+# Explanation
 
 Boolean Logic or Truth Tables are tradionally defined as integer only.
 * https://en.wikipedia.org/wiki/Truth_table#Binary_operations
