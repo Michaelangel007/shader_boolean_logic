@@ -3,7 +3,7 @@ Boolean Logic Demo
 Michael Pohoreski aka Michaelangel007 aka mysticreddit
 Copyleft {C} 2017
 https://github.com/Michaelangel007/shader_boolean_logic
-Version 7
+Version 9
 
 DISCLAIMER:
 
@@ -388,11 +388,24 @@ float center( float glyphWidth, float numChars )
 void mainImage( out vec4 f, in vec2 p )
 {
     vec2 q = p / iResolution.xy;
+    bool m;
 
 #if MOUSE_DRAG_COMPARE
-    bool m = (iMouse.x >= p.x); // left mouse button down
+    m = (iMouse.x >= p.x); // left mouse button down
 #else
-    bool m = (iMouse.z > 0.5); // left mouse button down
+    // X seconds, drag mouse right
+    // X seconds, un-drag mouse right
+    #define LEN_SEGMENTS 4.0
+    #define NUM_SEGMENTS 2.0
+
+    float timeR = mod( iGlobalTime + 1.0, (LEN_SEGMENTS * NUM_SEGMENTS) );
+    float timeQ = floor( timeR / LEN_SEGMENTS);
+
+    if( timeQ == 0.0 )
+        m = (timeR <= q.x); // 1 second "unwipe", 3 seconds static image
+    else
+    //( timeQ == 1.0 )
+        m = ((timeR - LEN_SEGMENTS) >= q.x); // 1 second "wipe", 3 seconds static image
 #endif
 
     float g;
