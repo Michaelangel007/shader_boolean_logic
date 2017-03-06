@@ -17,14 +17,14 @@ Boolean Logic or Truth Tables are tradionally defined as integer only.
 * https://en.wikipedia.org/wiki/Truth_table#Binary_operations
 
 
-| P | Q | F |AND|!thn| p |!if| q |XOR|OR |NOR|XNOR|!q |then|!p |if |NAND| T |
-|:-:|:-:|:-:|:-:|:--:|:-:|:-:|:-:|:-:|:-:|:-:|:--:|:-:|:--:|:-:|:-:|:--:|:-:|
-| 0 | 0 | 0 | 0 | 0  | 0 | 0 | 0 | 0 | 0 | 1 | 1  | 1 | 1  | 1 | 1 | 1  | 1 |
-| 0 | 1 | 0 | 0 | 0  | 0 | 1 | 1 | 1 | 1 | 0 | 0  | 0 | 0  | 1 | 1 | 1  | 1 |
-| 1 | 0 | 0 | 0 | 1  | 1 | 0 | 0 | 1 | 1 | 0 | 0  | 1 | 1  | 0 | 0 | 1  | 1 |
-| 1 | 1 | 0 | 1 | 0  | 1 | 0 | 1 | 0 | 1 | 0 | 1  | 0 | 1  | 0 | 1 | 0  | 1 |
-|Wik| - |#0 |#8 |#4  |#12|#2 |#10|#6 |#14|#1 |#9  |#5 |##13|#3 |#11|#7  |#15|
-| - | - |#0 |#1 |#2  |#3 |#4 |#5 |#6 |#7 |#8 |#9  |#10|#11 |#12|#13|#14 |#15|
+| P | Q | F |AND|!then| p |!if| q |XOR|OR |NOR|XNOR|!q |then|!p |if |NAND| T |
+|:-:|:-:|:-:|:-:|:---:|:-:|:-:|:-:|:-:|:-:|:-:|:--:|:-:|:--:|:-:|:-:|:--:|:-:|
+| 0 | 0 | 0 | 0 | 0   | 0 | 0 | 0 | 0 | 0 | 1 | 1  | 1 | 1  | 1 | 1 | 1  | 1 |
+| 0 | 1 | 0 | 0 | 0   | 0 | 1 | 1 | 1 | 1 | 0 | 0  | 0 | 0  | 1 | 1 | 1  | 1 |
+| 1 | 0 | 0 | 0 | 1   | 1 | 0 | 0 | 1 | 1 | 0 | 0  | 1 | 1  | 0 | 0 | 1  | 1 |
+| 1 | 1 | 0 | 1 | 0   | 1 | 0 | 1 | 0 | 1 | 0 | 1  | 0 | 1  | 0 | 1 | 0  | 1 |
+|Wik| - |#0 |#8 |#4   |#12|#2 |#10|#6 |#14|#1 |#9  |#5 |##13|#3 |#11|#7  |#15|
+| - | - |#0 |#1 |#2   |#3 |#4 |#5 |#6 |#7 |#8 |#9  |#10|#11 |#12|#13|#14 |#15|
 
 The bottom two rows are the enumeration of the 16 possible outcomes.
 Wikipedia reveres the order of P and Q because it was written by a philosophy.
@@ -55,7 +55,7 @@ However, we _can_ extend this to floating-poing math! Here are the formulas:
 Note(s):
 
 ```
-    Entries 8 .. 15 are `1 - x` of #0..#7, except for `if`, `then`, `!if`, and `then`
+    Entries 8 .. 15 are `1 - x` of #0..#7, except for `if`, `then`, `!if`, and `!then`
 
     XOR can be thought as:
 
@@ -82,8 +82,15 @@ Note(s):
 Legend:
 
 ```
-    ! means logical NOT, whereas `N` means `1.0 - x`.
-    i.e. OR = (1-q)*(1-p), NOR = 1 - OR(p,q)
+    `!` means logical NOT, whereas
+    `N` means `1.0 - x`.
+```
+
+i.e. 
+
+```c
+    OR = (1-q)*(1-p), 
+    NOR = 1 - OR(p,q)
 ```
 
 # Problem

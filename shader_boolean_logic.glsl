@@ -1,17 +1,16 @@
 /*
-
 Boolean Logic Demo
 Michael Pohoreski aka Michaelangel007 aka mysticreddit
 Copyleft {C} 2017
 https://github.com/Michaelangel007/shader_boolean_logic
-Version 6
+Version 7
 
 DISCLAIMER:
 
     You are free to use this code as you wish.
 
-    However, if you are going to copy/paste this code
-    and paste snippets on StackOverflow, StackExchange, Reddit, etc.
+    However, if you are going to copy/paste snippets of this code
+    on StackOverflow, StackExchange, Reddit, etc.
     Please provide a link back to the original source
     so that people can find updates and bugfixes.
     Thanks!
@@ -21,7 +20,7 @@ Introduction:
     Boolean Logic or Truth Tables are tradionally defined as integer only.
     https://en.wikipedia.org/wiki/Truth_table#Binary_operations
 
-    We _can_ extend this to floating-poing math.
+    However we _can_ extend this to floating-poing math aka "fuzzy" logic.
 
     This demo shows how to define the boolean operators such as AND, OR, NOT, etc.
     using floating-poing math when you don't have boolean operators.
@@ -36,6 +35,9 @@ Also see:
  Cross Hatch Patterns
  https://www.shadertoy.com/view/MdfyDH
 
+ Bart Kosko
+ Fuzzy Thinking: The New Science of Fuzzy Logic
+ https://www.amazon.com/Fuzzy-Thinking-New-Science-Logic/dp/078688021X/
 */
 #define MOUSE_DRAG_COMPARE 0 // Change to 1 for split screen compare
 
