@@ -112,7 +112,7 @@ Why does this alternate defintion of XOR fail?
     XOR2( 0.5, 0.5 ) returns 0.5 instead of correct 0.0
 
 
-Likewise NAND, 1-a-b, completely FAILS for these values:
+Likewise NAND, `1-a*b`, completely FAILS for these values:
 
 | p   | q   | Incorrect | Correct |
 |:---:|:----|:---------:|:-------:|
